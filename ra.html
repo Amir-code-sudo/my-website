@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خريطة المدينة</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #eaf2f8;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        img {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .buttons-container {
+            margin-top: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .heritage-map, .heritage-section, .entertainment-map, .entertainment-section, .commercial-map, .commercial-section {
+            display: none;
+            margin-top: 40px;
+        }
+        .heritage-grid, .entertainment-grid, .commercial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .heritage-item, .entertainment-item, .commercial-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        .heritage-item img, .entertainment-item img, .commercial-item img {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+        .heritage-item p, .entertainment-item p, .commercial-item p {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function showHeritageMap() {
+            document.querySelector(".heritage-map").style.display = "block";
+            document.querySelector(".entertainment-map").style.display = "none";
+            document.querySelector(".commercial-map").style.display = "none";
+        }
+
+        function showEntertainmentMap() {
+            document.querySelector(".entertainment-map").style.display = "block";
+            document.querySelector(".heritage-map").style.display = "none";
+            document.querySelector(".commercial-map").style.display = "none";
+        }
+
+        function showCommercialMap() {
+            document.querySelector(".commercial-map").style.display = "block";
+            document.querySelector(".heritage-map").style.display = "none";
+            document.querySelector(".entertainment-map").style.display = "none";
+        }
+
+        function showHeritageDetails() {
+            document.querySelector(".heritage-map").style.display = "none";
+            document.querySelector(".heritage-section").style.display = "block";
+        }
+
+        function showEntertainmentDetails() {
+            document.querySelector(".entertainment-map").style.display = "none";
+            document.querySelector(".entertainment-section").style.display = "block";
+        }
+
+        function showCommercialDetails() {
+            document.querySelector(".commercial-map").style.display = "none";
+            document.querySelector(".commercial-section").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>خريطة المدينة</h1>
+    <img src="./vv.jpeg" alt="خريطة المدينة">
+    
+    <div class="buttons-container">
+        <button onclick="showCommercialMap()">التجاري</button>
+        <button onclick="showEntertainmentMap()">الترفيهي</button>
+        <button onclick="showHeritageMap()">مباني تراثية</button>
+    </div>
+
+    <!-- الخريطة الخاصة بالمباني التراثية -->
+    <div class="heritage-map">
+        <h2>خريطة المباني التراثية</h2>
+        <img src="./قق.jpeg" alt="خريطة المباني التراثية" onclick="showHeritageDetails()">
+    </div>
+
+    <!-- تفاصيل المباني التراثية -->
+    <div class="heritage-section">
+        <h2>المباني التراثية</h2>
+        <div class="heritage-grid">
+            <div class="heritage-item">
+                <img src="./WhatsApp Image 2024-11-28 at 9.49.44 PM (1).jpeg" alt="مبنى 1">
+                <p>مبنى المطافئ بالعتبة، في قلب ميدان العتبة، يعود إلى الحكم الملكي ويتميز بطابع معماري فريد. يُعد مركزًا رئيسيًا للحماية المدنية ومجهزًا لإدارة الحرائق والطوارئ، مع برج مراقبة كان يُستخدم لرصد الحرائق. لا يزال المبنى قيد الاستخدام ويُعتبر رمزًا لتراث القاهرة الخدمي.</p>
+            </div>
+
+            <div class="heritage-item">
+                <img src="./WhatsApp Image 2024-11-28 at 9.49.44 PM (2).jpeg" alt="مبنى 2">
+                <p>متحف البريد بالعتبة، تأسس عام 1934 لتوثيق تاريخ البريد في مصر. يضم أكثر من 1250 قطعة، تشمل طوابع نادرة، أدوات بريدية قديمة، ووسائل نقل البريد عبر العصور. يقع في مبنى البريد الرئيسي بالعتبة ويُعد وجهة تعليمية وسياحية مهمة.</p>
+            </div>
+
+            <div class="heritage-item">
+                <img src="./WhatsApp Image 2024-11-28 at 9.49.44 PM.jpeg" alt="مبنى 3">
+                <p>متحف الفن الإسلامي بالقاهرة، الأكبر عالميًا، يضم فنونًا إسلامية متنوعة من مختلف الدول. أُسس عام 1881م بقرار من الخديوي توفيق لجمع التحف الإسلامية، وبدأ كغرفة واحدة، ثم انتقل عام 1884م إلى مسجد الحاكم بأمر الله تحت إشراف لجنة حفظ الآثار</p>
+            </div>
+
+            <div class="heritage-item">
+                <img src="./WhatsApp Image 2024-11-28 at 9.49.45 PM (1).jpeg" alt="مبنى 4">
+                <p>عمارة تيرينج بالعتبة، بُنيت في أوائل القرن العشرين بتصميم كلاسيكي، وكانت مملوكة لليهود المصريين الذين ساهموا في الحياة الاقتصادية. تتميز بواجهات زخرفية وموقع تجاري حيوي، لكنها تعاني الآن من الإهمال وتحتاج إلى ترميم.</p>
+            </div>
+
+            <div class="heritage-item">
+                <img src="./WhatsApp Image 2024-11-28 at 9.49.45 PM.jpeg" alt="مبنى 5">
+                <p>المسرح القـومى المصـرى هو واحد من مسارح القاهرة ، ويقع فى منطقة الأزبكية وتم تأسيسه بأمر من الخديوى اسماعيل سنة 1869. ويعد المسرح القومى من العلامات الثقافية المصرية من بداية نشاطه فى الخمسينيات وقدم روائع المسرح العالمى و أعيد افتتاحه سنة 1986.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- الخريطة الخاصة بالمواقع الترفيهية -->
+    <div class="entertainment-map">
+        <h2>خريطة المواقع الترفيهية</h2>
+        <img src="./عخ.jpeg" alt="خريطة المواقع الترفيهية" onclick="showEntertainmentDetails()">
+    </div>
+
+    <!-- تفاصيل المواقع الترفيهية -->
+    <div class="entertainment-section">
+        <h2>المواقع الترفيهية</h2>
+        <div class="entertainment-grid">
+            <div class="entertainment-item">
+                <img src="./حخه.jpeg" alt="موقع ترفيهي 1">
+                <p>"استمتع بالهدوء والطبيعة في أجمل الأماكن الترفيهية ذات المساحات الخضراء، حيث الهواء النقي واللحظات التي تبقى في الذاكرة."</p>
+            </div>
+
+            <div class="entertainment-item">
+                <img src="./تا.jpeg" alt="موقع ترفيهي 2">
+                <p>"فود كورت، حيث تُنسج لحظات الطعم الرائعة من تنوع الأطباق، ليصبح كل وجبة تجربة لا تُنسى."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- الخريطة الخاصة بالمواقع التجارية -->
+    <div class="commercial-map">
+        <h2>خريطة المواقع التجارية</h2>
+        <img src="./رلععه.jpeg"خريطة المواقع التجارية" onclick="showCommercialDetails()">
+    </div>
+
+    <!-- تفاصيل المواقع التجارية -->
+    <div class="commercial-section">
+        <h2>المواقع التجارية</h2>
+        <div class="commercial-grid">
+            <div class="commercial-item">
+                <img src="./ojhvcx.jpeg" alt="موقع تجاري 1">
+                <p>تجارى سياحي</p>
+            </div>
+
+            <div class="commercial-item">
+                <img src="./plkjhg.jpeg" alt="موقع تجاري 2">
+                <p>أسواق ملابس</p>
+            </div>
+
+            <div class="commercial-item">
+                <img src="./vhjf.jpeg" alt="موقع تجاري 3">
+                <p>أسواق خضار</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
